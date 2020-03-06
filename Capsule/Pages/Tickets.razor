@@ -1,0 +1,41 @@
+@page "/Tickets"
+@using Microsoft.AspNetCore.Components.Authorization
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+<AuthorizeView>
+    <Authorized>
+        <div class="title-heading">
+            <h1>Tickets</h1>
+            <div class="heading-icon">
+                <span class="oi oi-tag"></span>
+            </div>
+        </div>
+        <div class="app-content-section">
+            <div class="form-control-group">
+                <div class="form-control">
+                    <label for="ticket-id">Ticket Id</label>
+                    <input type="text" disabled id="ticket-id" >
+                </div>
+                <div class="form-control">
+                    <label for="ticket-date">Date</label>
+                    <input id="ticket-date" type="date">
+                </div>
+                <div class="form-control">
+                    <label for="ticket-title">Title</label>
+                    <input id="ticket-title" type="text">
+                </div>
+            </div>
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <a href="login?redirectUri=/">Log in</a>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+
+@code
+{
+
+}
